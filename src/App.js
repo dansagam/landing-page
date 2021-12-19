@@ -15,7 +15,7 @@ const App = function () {
                target="_blank"
                rel="noopener noreferrer"
             >
-               Learn React
+               Learning
             </a>
          </header>
       </div>
