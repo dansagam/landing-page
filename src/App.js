@@ -1,5 +1,7 @@
 import logo from './logo.svg'
 import './App.css'
+import CustomInput from './components/CustomInputs/Input'
+import RegularButton from './components/CustomButtons/Button'
 
 const App = function () {
    return (
@@ -17,6 +19,14 @@ const App = function () {
             >
                Learning
             </a>
+            <CustomInput
+               inputProps={{ disabled: true }}
+               labelText="testing"
+               formControlProps={{ fullWidth: false }}
+            />
+            <RegularButton round color="rose">
+               submit
+            </RegularButton>
          </header>
       </div>
    )

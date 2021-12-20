@@ -7,7 +7,14 @@ import styles from './buttonStyles'
 // const useStyles = makeStyles(styles)
 
 const ButtonRoot = styled(MuiButton, {
-   shouldForwardProp: (prop) => prop !== 'size' && prop !== 'color',
+   shouldForwardProp: (prop) =>
+      prop !== 'size' &&
+      prop !== 'color' &&
+      prop !== 'round' &&
+      prop !== 'simple' &&
+      prop !== 'block' &&
+      prop !== 'link' &&
+      prop !== 'justIcon',
 })(
    ({
       // eslint-disable-next-line no-unused-vars
@@ -21,6 +28,7 @@ const ButtonRoot = styled(MuiButton, {
       link,
       justIcon,
    }) => ({
+      ...styles.button,
       ...(size && styles[size]),
       ...(color && styles[color]),
       ...(round && styles.round),
@@ -28,7 +36,6 @@ const ButtonRoot = styled(MuiButton, {
       ...(simple && styles.simple),
       ...(block && styles.block),
       ...(link && styles.link),
-      ...styles.button,
       ...(justIcon && styles.justIcon),
       // borderRadius: 0,
       // fontWeight: theme.typography.fontWeightMedium,
@@ -50,7 +57,7 @@ const ButtonRoot = styled(MuiButton, {
    })
 )
 
-const RegularButton = () => {
+const RegularButton = (props) => {
    const {
       color,
       round,
@@ -65,19 +72,6 @@ const RegularButton = () => {
       muiClasses,
       ...rest
    } = props
-   // const classes = useStyles()
-   // const btnClasses = classNames({
-   //    [classes.button]: true,
-   //    [classes[size]]: size,
-   //    [classes[color]]: color,
-   //    [classes.round]: round,
-   //    [classes.disabled]: disabled,
-   //    [classes.simple]: simple,
-   //    [classes.block]: block,
-   //    [classes.link]: link,
-   //    [classes.justIcon]: justIcon,
-   //    [className]: className,
-   // })
    return (
       <ButtonRoot
          block={block}
@@ -110,7 +104,7 @@ RegularButton.propTypes = {
       'white',
       'transparent',
    ]),
-   size: PropTypes.oneOf(['small', 'large']),
+   size: PropTypes.oneOf(['sm', 'lg']),
    simple: PropTypes.bool,
    round: PropTypes.bool,
    disabled: PropTypes.bool,
