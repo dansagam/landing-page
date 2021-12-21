@@ -1,34 +1,22 @@
-import logo from './logo.svg'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import CustomInput from './components/CustomInputs/Input'
-import RegularButton from './components/CustomButtons/Button'
+// import NavbarMenu from './components/Navbars/NavbarMenu'
+import Navbars from './components/Navbars/Navbars'
+import Home from './views/Home/Home'
+import SignIn from './views/SignIn/SignIn'
+import SignUp from './views/SignUp/SignUp'
 
 const App = function () {
    return (
-      <div className="App">
-         <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-               Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-               className="App-link"
-               href="https://reactjs.org"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-               Learning
-            </a>
-            <CustomInput
-               inputProps={{ disabled: true }}
-               labelText="testing"
-               formControlProps={{ fullWidth: false }}
-            />
-            <RegularButton round color="rose">
-               submit
-            </RegularButton>
-         </header>
-      </div>
+      <>
+         <Navbars />
+         {/* <NavbarMenu /> */}
+         <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="signin" element={<SignIn />} />
+         </Routes>
+      </>
    )
 }
 

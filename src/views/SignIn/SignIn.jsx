@@ -9,14 +9,14 @@ import GridItem from '../../components/Grid/GridItem/GridItem'
 import Input from '../../components/CustomInputs/Input'
 import Button from '../../components/CustomButtons/Button'
 
-const SignUp = () => (
+const SignIn = () => (
    <AppForm>
       <>
-         <Typography variant="h3" marked="center" align="center">
-            SignUp
+         <Typography variant="h3" marked="none" align="center">
+            Sign In
          </Typography>
          <Typography variant="body2" align="center">
-            <Link href="/signin">Already have an account?</Link>
+            <Link href="/signup">New Here?</Link>
          </Typography>
       </>
       <form onSubmit="">
@@ -28,34 +28,6 @@ const SignUp = () => (
             sx={{ mt: 6 }}
             color="primary"
          >
-            <GridContainer>
-               <GridItem xs={12} sm={6}>
-                  <Input
-                     inputProps={{
-                        name: 'firstName',
-                        placeholder: 'First Name',
-                        required: true,
-                     }}
-                     formControlProps={{ fullWidth: false }}
-                     labelText="First Name"
-                     id="firstNameId"
-                  />
-               </GridItem>
-               <GridItem xs={12} sm={6}>
-                  <Input
-                     inputProps={{
-                        name: 'lastName',
-                        required: true,
-                        placeholder: 'Last Name',
-                     }}
-                     name="lastName"
-                     formControlProps={{ fullWidth: false }}
-                     labelText="Last Name"
-                     required
-                     id="firstNameId"
-                  />
-               </GridItem>
-            </GridContainer>
             <Input
                formControlProps={{ fullWidth: true }}
                labelText="email"
@@ -94,4 +66,4 @@ const SignUp = () => (
    </AppForm>
 )
 
-export default SignUp
+export default SignIn

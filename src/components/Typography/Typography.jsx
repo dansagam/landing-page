@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 
+import { createTheme } from '@mui/material/styles'
 import { withStyles } from '@mui/styles'
 import MuiTypography from '@mui/material/Typography'
 
@@ -29,8 +30,11 @@ const markStyleMapping = {
       h6: '',
    },
 }
+const theme = createTheme({
+   spacing: 4,
+})
 
-const styles = (theme) => ({
+const styles = () => ({
    [markStyleMapping.center.h2]: {
       height: 4,
       width: 73,
@@ -70,7 +74,6 @@ const variantMapping = {
    h6: 'h2',
    subtitle1: 'h3',
 }
-
 function Typography(props) {
    const { children, variant, classes, marked = 'none', ...other } = props
 
